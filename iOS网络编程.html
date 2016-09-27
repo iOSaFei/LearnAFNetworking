@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 6.6 (453323)"/><meta name="author" content="179153676@qq.com"/><meta name="created" content="2016-09-23 13:20:02 +0000"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2016-09-27 03:48:59 +0000"/><title>iOS网络编程</title></head><body>
+<div><br/></div>
+<div>
+<div style="text-rendering: optimizelegibility; font-style: normal; font-variant-caps: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<div><span style="color: rgb(47, 47, 47);"><span style="font-size: 24px;"><span style="font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;"><b>一. 网络编程基础：</b></span></span></span></div>
+<div>
+<h4>1. 在网络编程中，有几个必须掌握的基本概念</h4>
+<p>客户端（Client）：移动应用（iOS、android等应用）<br/>
+服务器（Server）：为客户端提供服务、提供数据、提供资源的机器<br/>
+请求（Request）：客户端向服务器索取数据的一种行为<br/>
+响应（Response）：服务器对客户端的请求做出的反应，一般指返回数据给客户端</p>
+<p/>
+</div>
+<div><br/></div>
+<div><br/></div>
+<div>
+<div style="text-rendering: optimizelegibility; font-style: normal; font-variant-caps: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<div><span style="color: rgb(47, 47, 47);"><span style="font-size: 24px;"><span style="font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;"><b>二. HTTP协议</b></span></span></span></div>
+<div><b><span style="font-size: 15px;"><span style="font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;"><span style="color: rgb(47, 47, 47);"><br/></span></span></span></b></div>
+<div><span style="color: rgb(47, 47, 47);"><span style="font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;"><span style="font-size: 15px;"><strong style="font-weight: bold;">HTTP协议：</strong>即超文本传输协议(Hypertext transfer protocol)。是一种详细规定了浏览器和万维网(WWW = World Wide Web)服务器之间互相通信的规则，</span></span></span></div>
+<div><span style="color: rgb(47, 47, 47);"><span style="font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;"><span style="font-size: 15px;">通过因特网传送万维网文档的数据传送协议。</span></span></span></div>
+<div><b><span style="font-size: 15px;"><span style="font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;"><span style="color: rgb(47, 47, 47);"><br/></span></span></span></b></div>
+<div><strong style="font-weight: bold; color: rgb(47, 47, 47); font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; letter-spacing: normal; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">HTTP协议作用：</strong><span style="color: rgb(47, 47, 47); font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 245, 245); float: none;">HTTP协议是用于从WWW服务器传输超文本到本地浏览器的传送协议。它可以使浏览器更加高效，使网络传输减少。它不仅保证计算机</span></div>
+<div><span style="color: rgb(47, 47, 47); font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 245, 245); float: none;">正确快速地传输超文本文档，还确定传输文档中的哪一部分，以及哪部分内容首先显示(如文本先于图形)等。</span></div>
+<div><span style="font-size: 15px;"><span style="font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;"><span style="background-color: rgb(245, 245, 245);"><span style="color: rgb(47, 47, 47);"><br/></span></span></span></span></div>
+<div><strong>URL：</strong>我们在浏览器的地址栏里输入的网站地址叫做URL (Uniform Resource Locator，统一资源定位符)。每个网页也都有一个Internet地址。当你在浏览器的地址框中输入一个URL或是单击一个超级链接时，URL就确定了要浏览的地址。浏览器通过超文本传输协议(HTTP)，将Web服务器上站点的网页代码提取出来，并翻译成漂亮的网页。</div>
+<div><span style="font: 12.0px Helvetica">   </span></div>
+<div><strong style="font-weight: bold; color: rgb(47, 47, 47); font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; letter-spacing: normal; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">HTTP是基于传输层的TCP协议，而TCP是一个端到端的面向连接的协议。所谓的端到端可以理解为进程到进程之间的通信。所以HTTP在开始传输之前，首先需要建立TCP连接，而TCP连接的过程需要所谓的“三次握手”。</strong></div>
+<div><b><span style="font-size: 16px;"><span style="font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;"><span style="color: rgb(47, 47, 47);"><br/></span></span></span></b></div>
+<div><br/></div>
+<div>
+<div style="text-rendering: optimizelegibility; font-style: normal; font-variant-caps: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<div><span style="color: rgb(47, 47, 47);"><span style="font-size: 20px;"><span style="font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;"><b>发送HTTP请求的方法</b></span></span></span><span style="color: rgb(47, 47, 47);"><span style="font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;"><span style="font-size: 20px;"><b>GET和POST对比和区别</b></span></span></span></div>
+<div>
+<p style=" text-align: justify; word-break: break-word; color: rgb(47, 47, 47); font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><strong style="font-weight: bold;">GET和POST的主要区别表现在数据传递上</strong></p>
+</div>
+<div>
+<p>GET：在请求URL后面以<strong><code>?</code></strong>的形式拼接发给服务器的参数，多个参数之间用&amp;隔开。<br/>
+比如<code><a href="http://www.test.com/login?username=123&amp;pwd=234&amp;type=JSON">http://www.test.com/login?username=123&amp;pwd=234&amp;type=JSON</a></code>由于浏览器和服务器对URL长度有限制，因此在URL后面附带的参数是有限制的，通常不能超过1KB</p>
+<p>POST：发给服务器的参数全部放在请求体中，理论上，POST传递的数据量没有限制（具体还得看服务器的处理能力）</p>
+<p><strong>注意：GET和POST都可以向服务器传送数据，也都可以从服务器获取数据</strong></p>
+</div>
+<div>
+<p><strong>关于URL长度的限制</strong><br/>
+<strong>首先，HTTP协议及URL官方说明均对URL长度限制没有说明，也就是说GET，POST都对URL长度没有限制</strong>，但是HTTP客户端和服务器的实现对URL长度进行了限制，因此我们使用GET请求拼接参数，有时会导致URL过长而无法进行请求。</p>
+<p><strong>关于安全问题</strong><br/>
+并不是POST比GET特别安全，只不过GET传递的参数显示在URL中，我们一眼就可以看到，POST方式看不到是因为浏览器做了限制，我们同样可以用第三方工具看到POST方式传递的数据。</p>
+</div>
+<div><strong style="font-weight: bold; color: rgb(47, 47, 47); font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; letter-spacing: normal; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">GET 和POST 的选择</strong>
+<div><span style="color: rgb(47, 47, 47); font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">选择GET和POST的建议</span></div>
+<div><span style="color: rgb(47, 47, 47); font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">如果仅仅是索取数据（数据查询），建议使用GET</span></div>
+</div>
+<div><span style="color: rgb(47, 47, 47); font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">如果是增加、修改、删除数据或者传递大量数据，比如文件上传，建议用POST</span></div>
+<div>
+<p><strong>URL中多值参数和中文输出</strong></p>
+<ol>
+<li>
+<p>多值参数<br/>
+有时候一个参数名，可能会对应多个值。例如<br/>
+<strong><code><a href="http://120.25.226.186:32812/weather?place=Beijing&amp;place=Henan&amp;place=Hunan">http://120.25.226.186:32812/weather?place=Beijing&amp;place=Henan&amp;place=Hunan</a></code></strong><br/>
+当一个参数有多个值的时候，需要使用下面这样方式来赋值<br/>
+<strong><code>place=beijing&amp;place=shanghai</code></strong><br/>
+服务器的place属性是一个数组</p>
+</li>
+<li>
+<p>中文参数<br/>
+当url中有汉字的时候，我们需要先进行中文转码<br/>
+GET需要转码，POST当参数有汉字的时候就不用转码了，因为POST参数在请求体中，但是当url有汉字的时候同样需要转码。</p>
+<pre>
+<code>NSString *urlStr = @"<a href="http://120.25.226.186:32812/login2?username=%E6%B1%89%E5%AD%97&amp;pwd=520it">http://120.25.226.186:32812/login2?username=汉字&amp;pwd=520it</a>";
+urlStr =  [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];</code>
+</pre></li>
+</ol>
+</div>
+<div><br/></div>
+<div>
+<div style="text-rendering: optimizelegibility; font-style: normal; font-variant-caps: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<div><span style="color: rgb(47, 47, 47);"><span style="font-size: 20px;"><span style="font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;"><b>HTTPS</b></span></span></span></div>
+<div><br/></div>
+<div>
+<div style="text-rendering: optimizelegibility; font-style: normal; font-variant-caps: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<div><span style="color: rgb(47, 47, 47);"><span style="font-size: 20px;"><span style="font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;"><b>HTTPS简介</b></span></span></span></div>
+<div>HTTPS（全称：Hyper Text Transfer Protocol over Secure Socket Layer），是以安全为目标的HTTP通道，简单讲是HTTP的安全版。即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL。</div>
+<div>
+<div><br/></div>
+</div>
+<div>
+<h4>HTTPS与HTTP的区别</h4>
+<p><strong>超文本传输协议HTTP协议</strong>被用于在Web浏览器和网站服务器之间传递信息。HTTP协议以明文方式发送内容，不提供任何方式的数据加密，如果攻击者截取了Web浏览器和网站服务器之间的传输报文，就可以直接读懂其中的信息，<strong>因此HTTP协议不适合传输一些敏感信息，比如信用卡号、密码等。</strong></p>
+<p>为了解决HTTP协议的这一缺陷，需要使用另一种协议：安全套接字层超文本传输协议HTTPS。<strong>为了数据传输的安全，HTTPS在HTTP的基础上加入了SSL协议，SSL依靠证书来验证服务器的身份，并为浏览器和服务器之间的通信加密。</strong></p>
+<p/>
+</div>
+<div>
+<p>HTTPS和HTTP的区别主要为以下四点：</p>
+</div>
+<div style="margin-left:40px;"><br/></div>
+<div style="margin-left:40px;">一、https协议需要到ca申请证书，一般免费证书很少，需要交费。<br/>
+二、http是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl加密传输协议。<br/>
+三、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。</div>
+<div style="margin-left:40px;">四、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div style="text-rendering: optimizelegibility; font-style: normal; font-variant-caps: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<div><span style="font-size: 24px;"><b><span style="font-family: -apple-system, 'Helvetica Neue', Arial, 'PingFang SC', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;"><span style="color: rgb(47, 47, 47);"><br/></span></span></b></span></div>
+<div><br/></div>
+<div>
+<h3 style="box-sizing: border-box; outline: none; color: rgb(51, 51, 51); font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', Arial, 'Microsoft YaHei', 'Helvetica Neue', sans-serif; font-style: normal; font-variant-caps: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">1. NSURLConnection的使用</h3>
+<p style="box-sizing: border-box; outline: none; color: rgb(51, 51, 51); font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', Arial, 'Microsoft YaHei', 'Helvetica Neue', sans-serif; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">使用NSURLConnection发送请求的步骤很简单</p>
+<ol style="box-sizing: border-box; outline: none; padding-left: 2em; color: rgb(51, 51, 51); font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', Arial, 'Microsoft YaHei', 'Helvetica Neue', sans-serif; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<li style="box-sizing: border-box; outline: none;">创建一个NSURL对象，设置请求路径<br style="box-sizing: border-box; outline: none;"/>
+NSURL：请求地址</li>
+<li style="box-sizing: border-box; outline: none;">传入NSURL创建一个NSURLRequest对象，设置请求头和请求体<br style="box-sizing: border-box; outline: none;"/>
+NSURLRequest：一个NSURLRequest对象就代表一个请求，它包含的信息有<br style="box-sizing: border-box; outline: none;"/>
+一个NSURL对象、请求方法、请求头、请求体、请求超时等<br style="box-sizing: border-box; outline: none;"/>
+NSMutableURLRequest：NSURLRequest的子类，NSURLRequest默认的请求方法是GET，当我们需要修改请求方法时，请求头的时候就要用可变的NSMutableURLRequest</li>
+<li style="box-sizing: border-box; outline: none;">使用NSURLConnection发送请求<br style="box-sizing: border-box; outline: none;"/>
+NSURLConnection负责发送请求，建立客户端和服务器的连接，同时发送数据给服务器，并收集来自服务器的响应数据</li>
+</ol>
+<div style="box-sizing: border-box; outline: none;">
+<div><br/></div>
+<div><span style="font: 12.0px Helvetica"><img src="iOS%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.resources/029C590A-5C73-4737-8CFB-4E106188C381.png" height="361" width="1158"/></span></div>
+<div><strong style="box-sizing: border-box; outline: none; font-weight: 700; color: rgb(51, 51, 51); font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', Arial, 'Microsoft YaHei', 'Helvetica Neue', sans-serif; font-style: normal; font-variant-caps: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">NSURLConnection常见的发送请求方法分为同步和异步请求</strong></div>
+<div><strong style="box-sizing: border-box; outline: none; font-weight: 700; color: rgb(51, 51, 51); font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', Arial, 'Microsoft YaHei', 'Helvetica Neue', sans-serif; font-style: normal; font-variant-caps: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">注意：同步请求和异步请求的区别在于是否会阻塞线程，同步请求会阻塞线程等请求完毕以后再执行后面的任务，异步请求不会阻塞线程，会等后面的任务执行完毕之后回头执行请求，异步请求有开子线程的能力，但并不一定会开启子线程</strong></div>
+<div><span style="color: rgb(51, 51, 51); font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', Arial, 'Microsoft YaHei', 'Helvetica Neue', sans-serif; font-size: medium; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">异步请求根据对服务器返回数据的处理方式的不同，block回调和代理。</span><span style="color: rgb(51, 51, 51); font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', Arial, 'Microsoft YaHei', 'Helvetica Neue', sans-serif; font-size: medium; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">成为NSURLConnection的代理，需要遵守</span><strong style="box-sizing: border-box; outline: none; font-weight: 700; color: rgb(51, 51, 51); font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', Arial, 'Microsoft YaHei', 'Helvetica Neue', sans-serif; font-style: normal; font-variant-caps: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">NSURLConnectionDataDelegate</strong><span style="color: rgb(51, 51, 51); font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', Arial, 'Microsoft YaHei', 'Helvetica Neue', sans-serif; font-size: medium; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); float: none;">协议</span></div>
+<div><span style="font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', Arial, 'Microsoft YaHei', 'Helvetica Neue', sans-serif;"><span style="background-color: rgb(255, 255, 255);"><span style="color: rgb(51, 51, 51);"><br/></span></span></span></div>
+<div>
+<div style="box-sizing: border-box; outline: none; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><span style="color: rgb(51, 51, 51);"><span style="font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', Arial, 'Microsoft YaHei', 'Helvetica Neue', sans-serif;"><strong style="box-sizing: border-box; outline: none; font-weight: 700;">1. 苹果为了方便我们拿到数据以后显示或者刷新UI，默认代理方法在主线程中调用，我们可以通过对象方法setDelegateQueue来设置代理执行的队列。</strong></span></span>
+<div><span style="color: rgb(51, 51, 51);"><span style="font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', Arial, 'Microsoft YaHei', 'Helvetica Neue', sans-serif;"><strong style="box-sizing: border-box; outline: none; font-weight: 700;">2. 请求数据的过程也可能非常耗时，我们能否将请求数据的操作也放在子线程中进行呢？答案是可以的但是需要注意，initWithRequest会将方法会将NSURLConnection对象加入当前对应的RunLoop中，当我们在子线程中进行网络请求，默认子线程的RunLoop不会自动创建，NSURLConnection对象会被释放，因此我们需要开启子线程中的RunLoop，保证NSURLConnection对象不会被释放。另外，当在子线程中设置请求手动开启调用start方法，就不需要开启子线程RunLoop了，因为start方法内部如果发现RunLoop不存在就会自动创建。</strong></span></span></div>
+<div><br/></div>
+<div>
+<div style="box-sizing: border-box; outline: none; color: rgb(51, 51, 51); font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', Arial, 'Microsoft YaHei', 'Helvetica Neue', sans-serif; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<div><b><br/></b></div>
+<div><strong style="box-sizing: border-box; outline: none; font-weight: 700;"><span style="font-size: 24px;">NSURLSessionConfiguration</span>对象用于初始化NSURLSession对象。当NSURLSession开启多个任务Task的时候可以用NSURLSessionConfiguration对象统一配置。</strong></div>
+会话在初始化时复制它们的配置，NSURLSession有一个只读的配置属性，使得该配置对象上的变化对这个会话无效。配置在初始化时被读取一次，之后都是不会变化的。<br style="box-sizing: border-box; outline: none;"/>
+NSURLSessionConfiguration有三个类构造函数<br style="box-sizing: border-box; outline: none;"/>
+<code style="box-sizing: border-box; outline: none; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 0.85em; padding: 0.2em 0.4em; word-break: break-word; color: rgb(221, 17, 68); background-color: rgb(248, 248, 248); border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px;">defaultSessionConfiguration</code>返回标准默认配置，一般我们都使用这个<br style="box-sizing: border-box; outline: none;"/>
+<code style="box-sizing: border-box; outline: none; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 0.85em; padding: 0.2em 0.4em; word-break: break-word; color: rgb(221, 17, 68); background-color: rgb(248, 248, 248); border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px;">ephemeralSessionConfiguration</code>返回一个预设配置，没有持久性存储的缓存，Cookie或证书。可以用来实现像"无痕浏览"功能的功能。<br style="box-sizing: border-box; outline: none;"/>
+<code style="box-sizing: border-box; outline: none; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 0.85em; padding: 0.2em 0.4em; word-break: break-word; color: rgb(221, 17, 68); background-color: rgb(248, 248, 248); border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px;">backgroundSessionConfiguration</code>：独特之处在于，它会创建一个后台会话。它甚至可以在应用程序挂起，退出，崩溃的情况下运行上传和下载任务。</div>
+<div style="box-sizing: border-box; outline: none; overflow: auto; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: medium; color: rgb(51, 51, 51); font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><code style="box-sizing: border-box; outline: none; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 0.85em; padding: 0.5em 1em; color: rgb(51, 51, 51); background-color: rgb(248, 248, 248); border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; overflow-x: auto; background-position: initial initial; background-repeat: initial initial;"> <span style="box-sizing: border-box; outline: none; color: rgb(0, 134, 179);">NSURLSessionConfiguration</span> *configuration = [<span style="box-sizing: border-box; outline: none; color: rgb(0, 134, 179);">NSURLSessionConfiguration</span> defaultSessionConfiguration];<br/>
+<span style="box-sizing: border-box; outline: none; color: rgb(153, 153, 136); font-style: italic;">// 请求超时时间</span><br/>
+configuration.timeoutIntervalForRequest = <span style="box-sizing: border-box; outline: none; color: teal;">10</span>;<br/>
+<span style="box-sizing: border-box; outline: none; color: rgb(153, 153, 136); font-style: italic;">// 加载资源超时时间</span><br/>
+configuration.timeoutIntervalForResource = <span style="box-sizing: border-box; outline: none; color: teal;">10</span>;<br/>
+<span style="box-sizing: border-box; outline: none; color: rgb(153, 153, 136); font-style: italic;">// 蜂窝网络状态下是否可用</span><br/>
+configuration.allowsCellularAccess = <span style="box-sizing: border-box; outline: none; color: teal;">YES</span>;</code></div>
+</div>
+</div>
+</div>
+<div>NSURLSessionConfiguration对象用于初始化NSURLSession对象。
+<div><br style="padding:0px;"/></div>
+</div>
+<div>展开请求级别中与NSMutableURLRequest相关的可供选择的方案，我们可以看到NSURLSessionConfiguration对于会 话如何产生请求，提供了相当多的控制和灵活性。从网络访问性能，到cookie，安全性，缓存策略，自定义协议，启动事件设置，以及用于移动设备优化的几 个新属性，你会发现你一直在寻找的，正是NSURLSessionConfiguration。</div>
+<div>会话在初始化时复制它们的配置，NSURLSession有一个只读的配置属性，使得该配置对象上的变化对这个会话的政策无效。配置在初始化时被读取一次，之后都是不会变化的</div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div style="font-weight: bold; font-size: 21px;">NSURLSessionTask</div>
+<div>
+<p>NSURLSessionTask可以简单理解为任务:如数据请求任务,下载任务,上传任务and so on.我们使用的是他的子类们:</p>
+<ul>
+<li>NSURLSessionTask(抽象类)
+<ul>
+<li>NSURLSessionDataTask
+<ul>
+<li>NSURLSessionUploadTask</li>
+</ul>
+</li>
+<li>NSURLSessionDownloadTask</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><br/></div>
+<div>从这几个子类的名字就可以大概猜出他们的作用了.接下来我们就从不同类型的任务出发,来使用session.</div>
+<ul>
+<li>
+<p>常用的属性</p>
+<ul>
+<li>taskIdentifier(NSUInteger, readonly)，任务标识，唯一确定一个任务</li>
+<li>originalRequest(NSURLRequest *, readonly)，上一个请求对象</li>
+<li>currentRequest(NSURLRequest *, readonly)，当前请求对象</li>
+<li>response(NSURLResponse *, readonly)，服务器的响应数据</li>
+<li>countOfBytesReceived(int64_t, readonly)，已经接收到的数据量</li>
+<li>countOfBytesExpectedToReceive(int64_t, readonly)，所要接收到的总数据量</li>
+<li>countOfBytesSent(int64_t, readonly)，已经发送的数据量</li>
+<li>countOfBytesExpectedToSend(int64_t, readonly)，所要发送的总数据量</li>
+<li>taskDescription(NSString *)，任务描述</li>
+<li>state(NSURLSessionTaskState, readonly)，任务的状态</li>
+<li>error(NSError *, readonly)，错误信息</li>
+<li>priority(float)，任务的优先级</li>
+</ul>
+</li>
+<li>
+<p>常用的方法(任务的状态控制)</p>
+<ul>
+<li>- (void)cancel，取消任务</li>
+<li>- (void)suspend，暂停任务</li>
+<li>- (void)resume，继续任务</li>
+</ul>
+</li>
+<li>
+<p>任务优先级属性priority的取值</p>
+<ul>
+<li>NSURLSessionTaskPriorityDefault</li>
+<li>NSURLSessionTaskPriorityLow</li>
+<li>NSURLSessionTaskPriorityHigh</li>
+</ul>
+</li>
+<li>
+<p>NSURLSessionTask</p>
+<ul>
+<li>NSURLSessionDataTask，该子类没有扩充属性和方法，只是为了与NSURLSessionUploadTask和NSURLSessionDownloadTask区分</li>
+<li>NSURLSessionUploadTask，用于上传任务</li>
+<li>
+<p>NSURLSessionDownloadTask，提供了一个取消任务的方法，但是会保存用于以后继续任务的信息，方法如下：</p>
+<br/>
+<code>- (void)cancelByProducingResumeData:(void (^)(NSData * __nullable resumeData))completionHandler;</code></li>
+</ul>
+</li>
+<li><br/></li>
+</ul>
+</div>
+</div>
+<div><span style="font-size: 12px;"><span style="font-family: Helvetica;"><br/></span></span></div>
+<div>
+<div><span style="font-size: 24px;">有的程序员老了,还没听过NSURLSession</span>
+<div><span style="font-size: 24px;">有的程序员还嫩,没用过NSURLConnection</span></div>
+</div>
+</div>
+<div><span style="font-size: 24px;">有的程序员很单纯,他只知道AFN.</span></div>
+<div><span style="font-size: 12px;"><span style="font-family: Helvetica;"><br/></span></span></div>
+<div><span style="font: 12.0px Helvetica"><img src="iOS%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.resources/F606880A-4AD7-473C-9683-D303093F73BE.png" height="173" width="659"/></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
